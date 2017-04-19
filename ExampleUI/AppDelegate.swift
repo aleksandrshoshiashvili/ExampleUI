@@ -12,10 +12,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-
-
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    let window = UIWindow(frame: UIScreen.main.bounds)
+    window.rootViewController = createRootViewController()
+    window.makeKeyAndVisible()
+    self.window = window
     return true
   }
 
@@ -40,7 +42,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
-
-
+  
 }
 
+extension AppDelegate {
+  
+  /**
+   
+   Меняет root controller на тот, что мы задали в launchEnvironment. Это такой способ выдернуть нужную вьюху.
+   
+  */
+  
+  func createRootViewController() -> UIViewController? {
+    let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: type(of: self)))
+    var rootViewController = storyboard.instantiateInitialViewController()
+    #if DEBUG
+      let environment = ProcessInfo.processInfo.environment
+      if let screenToLaunch = environment["screenToLaunch"] {
+        rootViewController = storyboard.instantiateViewController(withIdentifier: screenToLaunch)
+      }
+    #endif
+    return rootViewController
+  }
+}

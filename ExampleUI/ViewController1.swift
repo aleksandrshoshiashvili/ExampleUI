@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ViewController1.swift
 //  ExampleUI
 //
 //  Created by Alexander Shoshiashvili on 19/04/2017.
@@ -8,26 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController1: UIViewController {
+  
   override func viewDidLoad() {
     super.viewDidLoad()
   }
-
+  
   // MARK: - Action
   
   @IBAction func handleButtonAction(_ sender: Any) {
     view.backgroundColor = UIColor.rand()
   }
-
-}
-
-extension UIColor {
-  class func rand() -> UIColor{
-    let randomRed = CGFloat(drand48())
-    let randomGreen = CGFloat(drand48())
-    let randomBlue = CGFloat(drand48())
-    return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
-    
-  }
+  
 }
