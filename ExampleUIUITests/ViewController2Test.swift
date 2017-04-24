@@ -23,7 +23,6 @@ class ViewController2Test: ExampleUIUITests {
     app.typeText("123123")
     app.typeText("ads")
     app.typeText("123")
-    wait()
   }
   
 }

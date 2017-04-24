@@ -25,13 +25,11 @@ class ViewController1Test: ExampleUIUITests {
   func testViewController1() {
     let button = app.buttons.element
     button.tap()
-    wait()
   }
   
   func testDoubleTap() {
     let button = app.buttons.element
     button.doubleTap()
-    wait()
   }
   
 }

@@ -37,11 +37,6 @@
                BlueprintName = "ExampleUIUITests"
                ReferencedContainer = "container:ExampleUI.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "ViewController1Test">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

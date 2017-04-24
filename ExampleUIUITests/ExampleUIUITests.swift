@@ -43,6 +43,10 @@ class ExampleUIUITests: XCTestCase {
     super.tearDown()
   }
   
+  func testWait() {
+    wait()
+  }
+  
 }
 
 extension XCTestCase {

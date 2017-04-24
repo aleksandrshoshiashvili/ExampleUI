@@ -29,7 +29,6 @@ class ViewControllerTest: ExampleUIUITests {
   func testTap() {
     let button = app.buttons.element
     button.tap()
-    wait()
   }
   
 }
